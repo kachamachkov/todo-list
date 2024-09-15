@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Todo from './Todo';
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -7,10 +8,15 @@ export default function TodoList() {
     (async () => {
       fetch('https://dummyjson.com/todos')
         .then((res) => res.json())
-        .then((data) => setTodos(data));
+        .then((data) => setTodos(data.todos));
     })();
   }, []);
 
-  console.log(todos);
-  return <div>TodoList</div>;
+  return (
+    <ul>
+      {todos.map((t) => (
+        <li key={t.id}>{t.todo}</li>
+      ))}
+    </ul>
+  );
 }
