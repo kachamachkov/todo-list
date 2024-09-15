@@ -1,12 +1,9 @@
-import TodoList from "./components/TodoList";
-import Button from '@mui/material/Button'
-
+import Header from './components/Header';
+import TodoList from './components/TodoList';
 function App() {
   return (
     <>
-      <h1>ToDo List:</h1>
-
-      <Button variant="contianed">Hello Wolrd</Button>
+      <Header />
       <TodoList />
     </>
   );
