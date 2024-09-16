@@ -81,7 +81,7 @@ function useGetTodos() {
 
       setTodos(result.todos);
     })();
-  });
+  }, []);
 
   return [todos, setTodos];
 }
